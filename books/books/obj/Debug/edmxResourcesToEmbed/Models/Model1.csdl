@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nomAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="categorie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nomcategorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nmbrlivre" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="commande">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nomclient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prixcommande" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="livres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="titre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prix" Type="Double" />
+    <Property Name="quantite" Type="Int32" />
+    <Property Name="categorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="panier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nomcl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prixtotal" Type="Single" />
+  </EntityType>
+  <EntityContainer Name="SEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="categorie" EntityType="Self.categorie" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="commande" EntityType="Self.commande" />
+    <EntitySet Name="livres" EntityType="Self.livres" />
+    <EntitySet Name="panier" EntityType="Self.panier" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nomAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="emailAdmin" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="categorie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nomcategorie" Type="nvarchar" MaxLength="50" />
+          <Property Name="nmbrlivre" Type="int" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nom" Type="nvarchar" MaxLength="50" />
+          <Property Name="login" Type="nchar" MaxLength="10" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="commande">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nomclient" Type="nvarchar" MaxLength="50" />
+          <Property Name="prixcommande" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="livres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="img" Type="nvarchar" MaxLength="50" />
+          <Property Name="titre" Type="nvarchar" MaxLength="50" />
+          <Property Name="prix" Type="float" />
+          <Property Name="quantite" Type="int" />
+          <Property Name="categorie" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="panier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nomcl" Type="nvarchar" MaxLength="50" />
+          <Property Name="prixtotal" Type="real" />
+        </EntityType>
+        <EntityContainer Name="SModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="categorie" EntityType="Self.categorie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="commande" EntityType="Self.commande" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="livres" EntityType="Self.livres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="panier" EntityType="Self.panier" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nomAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="emailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="categorie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nomcategorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nmbrlivre" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="commande">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nomclient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prixcommande" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="livres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="titre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prix" Type="Double" />
+          <Property Name="quantite" Type="Int32" />
+          <Property Name="categorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="panier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nomcl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prixtotal" Type="Single" />
+        </EntityType>
+        <EntityContainer Name="SEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="categorie" EntityType="Self.categorie" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="commande" EntityType="Self.commande" />
+          <EntitySet Name="livres" EntityType="Self.livres" />
+          <EntitySet Name="panier" EntityType="Self.panier" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SModelStoreContainer" CdmEntityContainer="SEntities2">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="SModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nomAdmin" ColumnName="nomAdmin" />
+                <ScalarProperty Name="emailAdmin" ColumnName="emailAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categorie">
+            <EntityTypeMapping TypeName="SModel.categorie">
+              <MappingFragment StoreEntitySet="categorie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nomcategorie" ColumnName="nomcategorie" />
+                <ScalarProperty Name="nmbrlivre" ColumnName="nmbrlivre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="SModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="commande">
+            <EntityTypeMapping TypeName="SModel.commande">
+              <MappingFragment StoreEntitySet="commande">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nomclient" ColumnName="nomclient" />
+                <ScalarProperty Name="prixcommande" ColumnName="prixcommande" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="livres">
+            <EntityTypeMapping TypeName="SModel.livres">
+              <MappingFragment StoreEntitySet="livres">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="quantite" ColumnName="quantite" />
+                <ScalarProperty Name="categorie" ColumnName="categorie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="panier">
+            <EntityTypeMapping TypeName="SModel.panier">
+              <MappingFragment StoreEntitySet="panier">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nomcl" ColumnName="nomcl" />
+                <ScalarProperty Name="prixtotal" ColumnName="prixtotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

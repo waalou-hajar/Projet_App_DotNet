@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "register";
+}
+
+<div class="breadcrumb">
+    <div class="container">
+        <a class="breadcrumb-item" href="index.html">Home</a>
+        <span class="breadcrumb-item active">Register</span>
+    </div>
+</div>
+<section class="static about-sec">
+    <div class="container">
+        <h1>My Account / REgister</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled it to make a type specimen book. It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </p>
+        <div class="form">
+            <form method="post" action="./inscreption">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input name="nom" placeholder="Enter User Name" required>
+                        <span class="required-star">*</span>
+                    </div>
+                    <div class="col-md-4">
+                        <input name="login" type="text" placeholder="Votre Login " required>
+                        <span class="required-star">*</span>
+                    </div>
+                    <div class="col-md-4">
+                        <input name="password" type="password" placeholder="Password" required>
+                        <span class="required-star">*</span>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input name=" email" type="email" placeholder="Entrez nom@login" required>
+                        <span class="required-star">*</span>
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <input name="btn" type="submit" value="Register" class="btn black">
+                    </div>
+                </div>
+            </form>
+            <h5>not Registered? @Html.ActionLink("login here ", "Login", "Home")</h5>
+
+        </div>
+    </div>
+</section>
+

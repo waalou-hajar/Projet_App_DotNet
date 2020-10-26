@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SModelStoreContainer" CdmEntityContainer="SEntities2">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="SModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nomAdmin" ColumnName="nomAdmin" />
+          <ScalarProperty Name="emailAdmin" ColumnName="emailAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categorie">
+      <EntityTypeMapping TypeName="SModel.categorie">
+        <MappingFragment StoreEntitySet="categorie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nomcategorie" ColumnName="nomcategorie" />
+          <ScalarProperty Name="nmbrlivre" ColumnName="nmbrlivre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="SModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="commande">
+      <EntityTypeMapping TypeName="SModel.commande">
+        <MappingFragment StoreEntitySet="commande">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nomclient" ColumnName="nomclient" />
+          <ScalarProperty Name="prixcommande" ColumnName="prixcommande" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="livres">
+      <EntityTypeMapping TypeName="SModel.livres">
+        <MappingFragment StoreEntitySet="livres">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+          <ScalarProperty Name="categorie" ColumnName="categorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="panier">
+      <EntityTypeMapping TypeName="SModel.panier">
+        <MappingFragment StoreEntitySet="panier">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nomcl" ColumnName="nomcl" />
+          <ScalarProperty Name="prixtotal" ColumnName="prixtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

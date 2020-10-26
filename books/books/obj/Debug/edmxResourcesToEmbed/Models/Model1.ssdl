@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nomAdmin" Type="nvarchar" MaxLength="50" />
+    <Property Name="emailAdmin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="categorie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nomcategorie" Type="nvarchar" MaxLength="50" />
+    <Property Name="nmbrlivre" Type="int" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="login" Type="nchar" MaxLength="10" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="commande">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nomclient" Type="nvarchar" MaxLength="50" />
+    <Property Name="prixcommande" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="livres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="50" />
+    <Property Name="titre" Type="nvarchar" MaxLength="50" />
+    <Property Name="prix" Type="float" />
+    <Property Name="quantite" Type="int" />
+    <Property Name="categorie" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="panier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nomcl" Type="nvarchar" MaxLength="50" />
+    <Property Name="prixtotal" Type="real" />
+  </EntityType>
+  <EntityContainer Name="SModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="categorie" EntityType="Self.categorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="commande" EntityType="Self.commande" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="livres" EntityType="Self.livres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="panier" EntityType="Self.panier" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
